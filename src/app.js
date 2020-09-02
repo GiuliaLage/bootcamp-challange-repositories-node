@@ -34,7 +34,7 @@ app.post("/repositories", validateParams, (request, response) => {
   const {title, url, techs } = request.body 
  
   const repository = { 
-     id: 0+uuid(),
+     id: uuid(),
      title,
      url, 
      techs,
@@ -43,7 +43,7 @@ app.post("/repositories", validateParams, (request, response) => {
 
     repositories.push(repository);
 
-    return response.status(200).json(repository);
+    return response.json(repository);
   
 });
 
